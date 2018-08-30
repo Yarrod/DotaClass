@@ -50,7 +50,7 @@ $(document).ready(function () {
                 $('#result').fadeIn(600);
                 $('#result').text(' You are:  ' + data);
                 $('#result_picture').fadeIn(600);
-                $('#result_picture').text(' Result_test:  ' + data);
+                $('#result_picture').html('<img src="/static/heroes_for_serving/'+data+'.jpg">');
                 console.log('Success!');
             },
         });
