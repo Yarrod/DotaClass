@@ -1,8 +1,42 @@
 {% extends "base.html" %} {% block content %}
 
 <div>
-    <p> Hello there </p>
+    <h1> Dota image classification project </h1>
 
+    <h2> Sources </h2>
+
+    <p>
+    Webapp: <a href = "https://github.com/mtobeiyf/keras-flask-deploy-webapp.git"> Flask app source </a> <br>
+    Modeling: <a href = "https://github.com/anujshah1003/Transfer-Learning-in-keras---custom-data/blob/master/transfer_learning_vgg16_custom_data.py"> VGG16 model transfer learning </a> <br>
+    Project repo: <a href = "https://github.com/Yarrod/DotaClass"> My github repo with the project </a>
+    </p>
+    
+    <h2> Classification process </h2>
+    <p>
+        <ul>
+            <li>download hero images from google using web crawler </li>
+            <li>preprocess images to be consistent with VGG16 model </li>
+            <li>retrain final layer of the network (retraining more fully connected layers proved to be worse with given amount of data) </li>
+            <li>serve the model using flask and gunicorn for parallel requests </li>
+
+        </ul>    
+    </p>
+    
+    <h2> To do </h2>
+    <p>
+        <ul>
+            <li>use more data </li>
+            <li>add entity recognition so images get cropped instead of resizing </li>
+
+        </ul>    
+    </p>
+    
+    
+    <h2> Author </h2>
+    <p> 
+        Ondřej Pinta - Data scientist at O2 Czech republic with passion for gaming
+    </p>
+    
 </div>
 
 {% endblock %}
