@@ -1,7 +1,7 @@
 import multiprocessing
 
 bind = '0.0.0.0:80'
-workers = 4
+workers = 2
 #loglevel = 'debug'
 errorlog = 'runtime_log.log'
 syslog = False

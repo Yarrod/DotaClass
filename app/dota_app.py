@@ -12,7 +12,10 @@ import pickle
 
 
 # Keras
-from keras.applications.imagenet_utils import preprocess_input, decode_predictions
+#from keras.applications.imagenet_utils import preprocess_input, decode_predictions
+from keras.applications.inception_v3 import preprocess_input
+from keras.applications.inception_v3 import decode_predictions
+from keras.applications.inception_v3 import InceptionV3
 from keras.models import load_model
 from keras.preprocessing import image
 
@@ -24,6 +27,8 @@ from gevent.pywsgi import WSGIServer
 
 import tensorflow as tf
 from keras.backend.tensorflow_backend import set_session
+
+
 config = tf.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.8
 set_session(tf.Session(config=config))
@@ -45,7 +50,7 @@ with open('labels.p', 'rb') as f:
 
 #print(data_dir_list[0:10])    
 # Model saved with Keras model.save()
-MODEL_PATH = 'models/my_model2.h5'
+MODEL_PATH = 'models/inception_model_not_scaled.h5'
 
 # Load your trained model
 model = load_model(MODEL_PATH)
@@ -61,10 +66,10 @@ print('Model loaded. Start serving...')
 
 def model_predict(img_path, model):
     
-    img = image.load_img(img_path, target_size=(224, 224))
+    img = image.load_img(img_path, target_size=(299, 299))
     # Preprocessing the image
     img = image.img_to_array(img)
-    x = img.reshape((1, img.shape[0], img.shape[1], img.shape[2]))
+    x = np.expand_dims(img, axis=0)
     # x = np.true_divide(x, 255)
     # x = np.expand_dims(x, axis=0)
 
