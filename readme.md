@@ -3,7 +3,9 @@
 
 ## Sources
 App based on https://github.com/mtobeiyf/keras-flask-deploy-webapp.git
+
 Models: Inception V3 (current) and VGG16
+
 Other sources: 
     - https://github.com/anujshah1003/Transfer-Learning-in-keras---custom-data/blob/master/transfer_learning_vgg16_custom_data.py
     - https://deeplearningsandbox.com/how-to-use-transfer-learning-and-fine-tuning-in-keras-and-tensorflow-to-build-an-image-recognition-94b0b02444f2
