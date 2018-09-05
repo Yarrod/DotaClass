@@ -1,4 +1,4 @@
-#Dota classification app using keras fine-tuning of convolutional network
+# Dota classification app using keras fine-tuning of convolutional network
 
 
 ## Sources
