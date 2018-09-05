@@ -1,3 +1,5 @@
+# use sudo pip3 install
+numpy
 Werkzeug
 Flask
 numpy
@@ -6,3 +8,4 @@ gevent
 pillow
 h5py
 tensorflow
+gunicorn
